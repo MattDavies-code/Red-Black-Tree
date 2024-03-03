@@ -1,5 +1,5 @@
 
-# Red-Black-Tree-In-C
+# Red-Black-Tree
 ### Table of Contents
 
 1. [Project Motivation](#motivation)
@@ -8,7 +8,7 @@
 4. [Licensing, Authors, and Acknowledgements](#licensing)
 
 ## Project Motivation<a name="motivation"></a>
-A simple implementation of a red black tree in C developed to practice theory learny in my Algorithms and Data Structures module.
+A simple implementation of a red black tree developed to practice theory learnt in my Algorithms and Data Structures module.
 
 ## File Descriptions <a name="files"></a>
 
