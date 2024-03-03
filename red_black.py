@@ -1,13 +1,3 @@
-
-# File:     red_black.py
-# Author:   John Longley
-# Date:     October 2022
-
-# Template file for Inf2-IADS (2022-23) Coursework 1, Part B
-# Implementation of dictionaries by red-black trees: space-saving version
-
-# Provided code:
-
 Red, Black = True, False
 
 def colourStr(c):
@@ -67,14 +57,13 @@ class RedBlackTree():
         if root.key == key:
             return root.value       
         elif key < root.key:
-            return root.lookupHelper(root.left,key) #Go left
+            return self.lookupHelper(root.left,key) #Go left
         else:                 
-            return root.lookupHelper(root.right,key) #Go right
+            return self.lookupHelper(root.right,key) #Go right
 
     def lookup(self,key):
         return self.lookupHelper(self.root,key)
 
-# TODO: Task 2.
     def plainInsertHelper(self,root,key,value):
         if root.key == key:
             root.value = value #Replace value if key is already present
@@ -107,7 +96,6 @@ class RedBlackTree():
         else:
             return self.plainInsertHelper(self.root,key,value)
 
-# TODO: Task 3.
     def tryRedUncle(self):
         if len(self.stack) < 5: #3 nodes + 2 branches needed for grandad, parent and child
             return False
@@ -133,8 +121,6 @@ class RedBlackTree():
         while self.tryRedUncle()==True:
             self.tryRedUncle()
         
-# Provided code to support Task 4:
-
     def toNextBlackLevel(self,node):
         # inspect subtree down to the next level of blacks
         # and return list of components (subtrees or nodes) in L-to-R order
@@ -163,8 +149,6 @@ class RedBlackTree():
         b.right = c
         return b
 
-
-# TODO: Task 4.
     def endgame(self):
         #endgame 1: Tree is legal
         #endgame 2: Red pushed to root
@@ -190,7 +174,6 @@ class RedBlackTree():
         self.repeatRedUncle()
         self.endgame()
 
-# Provided code:
 
     # Printing tree contents
     
@@ -245,5 +228,3 @@ def TreeSort(L):
     for x in L:
         T.insert(x,None)
     return T.keysLtoR()
-
-# End of file
